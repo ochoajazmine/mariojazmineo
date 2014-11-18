@@ -11,7 +11,7 @@ game.PlayerEntity = me.Entity.extend({
                    return (new me.Rect(0, 0, 128, 128)).toPolygon();
                }
        }]);
-         this.body.setVelocity(5,20);
+         this.body.setVelocity(5, 20);
     },  
     
     update: function(delta){
