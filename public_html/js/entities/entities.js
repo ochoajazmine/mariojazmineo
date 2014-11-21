@@ -51,3 +51,10 @@ game.PlayerEntity = me.Entity.extend({
 
 });
 
+game.LevelTrigger = me.entity.extend({
+    init: function(x, y, settings){
+        
+    },
+    
+});
+
