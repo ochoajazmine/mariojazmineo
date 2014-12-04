@@ -17,7 +17,11 @@ game.PlayerEntity = me.Entity.extend({
 
         this.renderable.setCurrentAnimation("idle");
 
-        this.body.setVelocity(5, 20);   
+        this.body.setVelocity(5, 20);
+        me.game.viewport.follow(this.pos,me.game.viewport.AXIS.BOTH);
+        
+        
+        
     },
     
     update: function(delta) {
@@ -47,7 +51,7 @@ game.PlayerEntity = me.Entity.extend({
             this.renderable.setCurrentAnimation("idle");
         }
 
-       this.body.update(delta);
+       
        this._super(me.Entity, "update",[delta]);
        return true;
 
@@ -70,7 +74,7 @@ game.LevelTrigger = me.Entity.extend({
     onCollision: function(){
         this.body.setCollisionMask(me.collision.types.NO_OBJECT);
         me.levelDirector.loadLevel(this.level);
-        //me.state.current().resetPlayer();
+        me.state.current().resetPlayer();
     }
 });
 
